@@ -13,6 +13,7 @@
 */
 
 #include <Arduino.h>
+#include <LiquidCrystal.h>
 #include <Wire.h>
 
 #define LCD_ADDRESS 0x27
@@ -43,6 +44,10 @@ void setCGAddress(uint8_t);
 void setDDAddress(uint8_t);
 void writeData(char);
 
+// double check pin assignments 
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
 
@@ -54,6 +59,10 @@ void setup() {
     for (int i = 0; i < LCD_LENGTH; i+=1) {
       ddram[i] = 0x20;
     }
+
+    // set up the LCD's number of columns and rows:
+    lcd.begin(16, 2);
+    lcd.clear();
 }
 
 void loop() {
@@ -67,6 +76,8 @@ void loop() {
     }
     Serial.println();
     published = true;
+
+    lcd.print(ddram);
   }
   delay(1);
 }
