@@ -7,7 +7,7 @@ indRegEx = re.compile(r"L=(\d+\.\d+)u")
 capRegEx = re.compile(r"C= (\d+)p")
 swrRegEx = re.compile(r"SWR=(\d+\.\d+)")
 
-while True:
+def read_serial_data():
 	data = (ser.readline()).decode()
 	pwr = pwrRegEx.search(data)
 	ind = indRegEx.search(data)
