@@ -92,12 +92,6 @@ $EndComp
 Text Notes 10150 3150 0    50   ~ 0
 Dummy Load (DL)
 Wire Wire Line
-	8600 3700 9250 3700
-Wire Wire Line
-	9250 3700 9250 2900
-Wire Wire Line
-	9250 2900 9850 2900
-Wire Wire Line
 	8600 3900 9250 3900
 Wire Wire Line
 	9250 3900 9250 5600
@@ -962,11 +956,6 @@ Wire Wire Line
 Wire Wire Line
 	9450 1200 9450 1800
 Wire Wire Line
-	8600 1400 9250 1400
-Wire Wire Line
-	9250 1400 9250 2900
-Connection ~ 9250 2900
-Wire Wire Line
 	8600 1800 9450 1800
 Text Notes 8700 1600 0    50   ~ 0
 NC
@@ -1008,9 +997,6 @@ Wire Wire Line
 	4200 3750 4200 5050
 Text Notes 5700 3750 0    50   ~ 0
 AA
-Connection ~ 9450 1800
-Wire Wire Line
-	9450 1800 9450 2450
 $Comp
 L Connector_Generic:Conn_01x02 J6
 U 1 1 626D3EB2
@@ -1080,10 +1066,10 @@ Wire Wire Line
 Wire Wire Line
 	2100 1800 2900 1800
 $Comp
-L Transistor_BJT:2N3904 Q?
+L Transistor_BJT:2N3904 Q3
 U 1 1 627419CF
 P 7350 2100
-F 0 "Q?" H 7540 2146 50  0000 L CNN
+F 0 "Q3" H 7540 2146 50  0000 L CNN
 F 1 "2N3904" H 7540 2055 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 7550 2025 50  0001 L CIN
 F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 7350 2100 50  0001 L CNN
@@ -1091,10 +1077,10 @@ F 3 "https://www.fairchildsemi.com/datasheets/2N/2N3904.pdf" H 7350 2100 50  000
 	1    0    0    -1  
 $EndComp
 $Comp
-L Diode:1N4007 D?
+L Diode:1N4007 D3
 U 1 1 627419D5
 P 7450 1500
-F 0 "D?" V 7404 1579 50  0000 L CNN
+F 0 "D3" V 7404 1579 50  0000 L CNN
 F 1 "1N4007" V 7495 1579 50  0000 L CNN
 F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7450 1325 50  0001 C CNN
 F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7450 1500 50  0001 C CNN
@@ -1113,10 +1099,10 @@ F 3 "" H 7450 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C?
+L Device:C_Small C4
 U 1 1 627419E1
 P 6950 1500
-F 0 "C?" H 7042 1546 50  0000 L CNN
+F 0 "C4" H 7042 1546 50  0000 L CNN
 F 1 "0.1u" H 7042 1455 50  0000 L CNN
 F 2 "" H 6950 1500 50  0001 C CNN
 F 3 "~" H 6950 1500 50  0001 C CNN
@@ -1151,10 +1137,10 @@ Wire Wire Line
 	7450 1700 7450 1900
 Connection ~ 7450 1700
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R14
 U 1 1 627419F6
 P 6950 2100
-F 0 "R?" V 6745 2100 50  0000 C CNN
+F 0 "R14" V 6745 2100 50  0000 C CNN
 F 1 "4.7K" V 6836 2100 50  0000 C CNN
 F 2 "" H 6950 2100 50  0001 C CNN
 F 3 "~" H 6950 2100 50  0001 C CNN
@@ -1177,10 +1163,10 @@ Wire Wire Line
 Wire Wire Line
 	7050 2100 7150 2100
 $Comp
-L Device:C_Small C?
+L Device:C_Small C5
 U 1 1 62741A04
 P 6700 2300
-F 0 "C?" H 6792 2346 50  0000 L CNN
+F 0 "C5" H 6792 2346 50  0000 L CNN
 F 1 "0.1u" H 6792 2255 50  0000 L CNN
 F 2 "" H 6700 2300 50  0001 C CNN
 F 3 "~" H 6700 2300 50  0001 C CNN
@@ -1215,4 +1201,18 @@ Wire Wire Line
 Wire Wire Line
 	6450 2100 6450 3600
 Connection ~ 6700 2100
+Connection ~ 9450 1800
+Wire Wire Line
+	9450 1800 9450 2450
+Wire Wire Line
+	9550 1400 9550 2900
+Connection ~ 9550 2900
+Wire Wire Line
+	9550 2900 9850 2900
+Wire Wire Line
+	8600 1400 9550 1400
+Wire Wire Line
+	9550 2900 9550 3700
+Wire Wire Line
+	8600 3700 9550 3700
 $EndSCHEMATC
